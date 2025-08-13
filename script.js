@@ -8,8 +8,6 @@ const warningMessage = document.getElementById("warningMessage");
 
 const calorieLimit = 2000; // daily limit
 let foods = JSON.parse(localStorage.getItem("foods")) || [];
-
-// Initial Load
 renderFoods();
 updateTotal();
 
