@@ -45,16 +45,12 @@ addBtn.addEventListener("click", async () => {
   foodInput.value = "";
   calorieInput.value = "";
 });
-
-// Remove food
 function removeFood(index) {
   foods.splice(index, 1);
   localStorage.setItem("foods", JSON.stringify(foods));
   renderFoods();
   updateTotal();
 }
-
-// Reset
 resetBtn.addEventListener("click", () => {
   if (confirm("Are you sure you want to reset?")) {
     foods = [];
@@ -63,8 +59,6 @@ resetBtn.addEventListener("click", () => {
     updateTotal();
   }
 });
-
-// Render list
 function renderFoods() {
   foodList.innerHTML = "";
   foods.forEach((item, index) => {
@@ -78,7 +72,7 @@ function renderFoods() {
   });
 }
 
-// Update total & warning
+// to warn user that there has excedeed
 function updateTotal() {
   const total = foods.reduce((sum, item) => sum + item.calories, 0);
   totalCaloriesEl.textContent = total;
@@ -89,5 +83,3 @@ function updateTotal() {
     warningMessage.classList.add("hidden");
   }
 }
-
-//this the calorioes
