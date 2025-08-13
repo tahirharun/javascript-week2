@@ -1,4 +1,3 @@
-// DOM Elements
 const foodInput = document.getElementById("foodInput");
 const calorieInput = document.getElementById("calorieInput");
 const addBtn = document.getElementById("addBtn");
@@ -25,8 +24,6 @@ async function getCalories(foodName) {
     return 0;
   }
 }
-
-// Add food
 addBtn.addEventListener("click", async () => {
   const foodName = foodInput.value.trim();
   let calories = calorieInput.value.trim();
